@@ -1,0 +1,597 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "Century Gothic";
+  src: local("Century Gothic Regular"), local("Century-Gothic-Regular"), url("../resources/CenturyGothic/CenturyGothic.woff2") format("woff2"), url("../resources/CenturyGothic/CenturyGothic.woff") format("woff"), url("../resources/CenturyGothic/CenturyGothic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Century Gothic";
+  src: local("Century Gothic Bold"), local("Century-Gothic-Bold"), url("CenturyGothic-Bold.woff2") format("woff2"), url("CenturyGothic-Bold.woff") format("woff"), url("CenturyGothic-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/*-----------------------------------------------------------------2.1 - 2.2 LAYOUT*/
+
+/* 2.1 */
+* {
+  box-sizing: border-box; /* borders ska inte vara utanför elementet */
+}
+
+/* 2.1 */ 
+body {
+  display: flex; /* möjliggör att t.ex sidebar och main som är nästlade i body har flexibla storlekar och kan ordnas om */
+  flex-flow: row wrap; /* när raden är full, kommer nästa sak att hamna på nästa rad */
+  background: #18191a; 
+  margin: 0; /* makes content stretch to browser window edges*/
+}
+
+/* 2.1 */
+body aside {
+  flex: 1;
+  /* flex: 1 auto would create extra space on the right, it takes up as much space as possible, or so it seems  */
+}
+
+/* 2.1 */
+body nav a {
+  display: inline-block;
+  /* så att nav-höjden anpassas till paddingen hos a - större klick-yta! */
+  padding: 1.5em;
+  color: black;
+
+}
+
+/* 2.1 */
+body article,
+body section,
+body aside,
+body footer {
+  padding: 1rem;
+}
+
+/* 2.1 */
+body article {
+  padding: 2rem;
+  overflow: auto;
+  /* needed bacuase the float property of img causes article to "not be aware" of the height of img.. so it doesn't adapt to img height */
+}
+
+/* 2.1 Layout obligatoriskt */
+body article ol,
+body article ul,
+body article dl {
+  -moz-columns: 2 auto;
+  columns: 2 auto;
+  -moz-column-gap: 4rem;
+  column-gap: 4rem;
+}
+
+
+/* 2.1 */
+body article {
+  margin-bottom: 1rem;
+  /* space between articles */
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: rgb(58, 59, 60);
+}
+
+/* 2.1 */
+body main {
+  flex: 25 0px;
+  /*picking a large number relative to the flex value chosen for "aside" so that the sidebar gets relatively small */
+}
+/* 2.1 */
+body>* {
+  flex: 1 100%;
+  /* elements within body will stretch 100%, puts them on their own line */
+}
+
+/* 2.1 */
+footer {
+  order: 3;
+}
+
+/*-----------------------------------------------------------------2.1 - 2.2 BLANDAT*/
+
+body nav,
+body article {
+  background: rgb(36, 37, 38);
+  /* 2.1 */
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  /* 2.1 */
+  -moz-column-rule-style: solid;
+  column-rule-style: solid;
+  /* 2.2? */
+  -moz-column-rule-color: #202020;
+  column-rule-color: #202020;
+  -moz-column-gap: 4rem;
+  column-gap: 4rem;
+  /* 2.1 */
+  column-rule-style: solid;
+  /* 2.1 */
+}
+
+body nav p,
+body article p {
+  -moz-column-rule-style: solid;
+  column-rule-style: solid;
+  /* 2.2? */
+  -moz-column-rule-color: #202020;
+  column-rule-color: #202020;
+  -moz-column-gap: 2rem;
+  column-gap: 2rem;
+  /* 2.1 */
+  column-rule-style: solid;
+  /* 2.1 */
+}
+body article details>* {
+  padding: 1rem;
+}
+/*-----------------------------------------------------------------2.2 TEXT*/
+
+/* 2.2 */
+body {
+  font-family: "Century Gothic", CenturyGothic, sans-serif; /* har laddat ner fonts eftersom denna font inte är web safe. */
+  letter-spacing: 0.1em; /* obligatoriskt */
+}
+
+
+body summary,
+body details {
+  background: rgb(58, 59, 60);
+}
+
+/* 2.2 Text */
+body h1 {
+  color: rgb(58, 59, 60); 
+  text-align: center; 
+  text-transform: uppercase; 
+  text-rendering: optimizeLegibility; 
+  letter-spacing: 0.1em; 
+}
+/* 2.2 Text */
+body article {
+  color: silver; 
+  letter-spacing: 0.2em; 
+  line-height: 2em; 
+  text-shadow: 0.07em 0.07em 0.07em rgb(24, 25, 26); 
+}
+
+
+
+article ol dt, article ol dd, article ul dt, article ul dd, article dl dt, article dl dd {
+display: inline-block;
+}
+
+
+/* 2.2 */
+body article h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-transform: uppercase;
+}
+
+/* 2.2 */
+body aside summary {
+
+  color: #202020;
+  text-align: center;
+  text-transform: uppercase;
+  text-rendering: optimizeLegibility;
+  text-shadow: -0.01em -0.01em 0.01em #111, 0.02em 0.02em 0.01em #363636;
+
+}
+
+/* 2.2 text */
+body nav a {
+  font-size: 1em;
+  font-weight: 500;
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  text-rendering: optimizeLegibility;
+  letter-spacing: 0.1em;
+
+}
+/*-----------------------------------------------------------------2.3 LÄNKAR*/
+/* 2.3 Länkar  */
+body aside details {
+  cursor: pointer;
+}
+/* 2.3 */
+body nav a {
+  text-decoration: none;
+  text-shadow: 0px 0.01em 0px rgba(89, 89, 90, 0.3), 0px -0.01em 0px rgba(17, 17, 17, 0.7);
+}
+
+/* 2.3 Länkar obligatorisk */
+body footer a:link,
+body article a:link {
+  color: rgb(0, 163, 235);
+}
+
+/* 2.3 Länkar obligatorisk */
+body footer a:hover,
+body article a:hover {
+  color: cyan;
+}
+
+/* 2.3 Länkar obligatorisk */
+body footer a:active,
+body article a:active {
+  color: white;
+}
+
+/* 2.3 Länkar obligatorisk */
+body footer a:visited,
+body article a:visited {
+  color: gray;
+}
+/*-----------------------------------------------------------------2.4 LISTOR*/
+/* 2.4 listor */
+body article ul {
+  list-style-position: outside; 
+}
+/* 2.4 listor */
+body article ul li {
+  list-style: url("../resources/bullet.png"); 
+}
+/*-----------------------------------------------------------------2.5 TABELLER*/
+/* 2.5 Tabeller */
+body article table {
+  table-layout: auto; 
+  font-size: 0.9em; 
+  border-collapse: collapse; 
+  margin: 2em; 
+  min-width: 400px; 
+  border-top: 1px solid rgb(88, 89, 90); 
+  text-align: left; 
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px; /* a narrow shadow to make it look slightly elevated */
+}
+
+/* 2.5 Tabeller */
+body article table thead,
+body article table tfoot {
+  background: rgb(58, 59, 60); 
+}
+/* 2.5 Tabeller */
+body article table td,
+body article table th {
+  padding: 0.5em 1em; 
+}
+/* 2.5 Tabeller */
+body article table caption {
+  text-align: left; 
+}
+
+
+/*-----------------------------------------------------------------2.6 BILDER */
+/* 2.6 Bild obligatoriskt */
+aside img:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+body nav a:hover:nth-child(1) {
+  color: orangered;
+}
+
+body nav a:hover:nth-child(2) {
+  color: lime;
+}
+
+body nav a:hover:nth-child(3) {
+  color: orange;
+}
+
+body nav a:hover:nth-child(4) {
+  color: cyan;
+}
+
+/* 2.3 links */
+body nav a:active:nth-child(1) {
+  color: white;
+  
+}
+/*-----------------------------------------------------------------2.7 VIDEO */
+/* 
+          se 2.7 Audio och video.css
+*/ 
+/*-----------------------------------------------------------------2.8 FORMULÄR*/
+
+body form {
+  border-top: 1px solid rgb(58, 59, 60);
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  /* a narrow shadow to make it look slightly elevated */
+
+}
+
+body form input[type=file]::-webkit-file-upload-button {
+  background-color: rgb(58, 59, 60);
+  border-top: solid 1px rgb(88, 89, 90);
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  transition-duration: 500ms;
+}
+
+body form button,
+body form input[type=file]::file-selector-button {
+  background-color: rgb(58, 59, 60);
+  border-top: solid 1px rgb(88, 89, 90);
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  transition-duration: 500ms;
+}
+
+body form .form-submit-button:hover {
+  color: lime;
+}
+
+body form .form-reset-button:hover {
+  color: orangered;
+}
+
+body form button {
+  padding: 1em;
+}
+
+/* 2.8 formulär obligatoriskt */
+body form input[type=text],
+body form input[type=email],
+body form input[type=url] {
+  background-image: url("../resources/bullet.png");
+  background-position: 10px center;
+  background-repeat: no-repeat;
+}
+
+/* 2.8 formulär obligatoriskt */
+body form input[type=text],
+body form input[type=email],
+body form input[type=url],
+body form input[type=file],
+body form textarea {
+  background-color: #18191a;
+  color: white;
+  border-top: solid 1px black;
+  border-left: solid 1px rgb(58, 59, 60);
+  border-right: solid 1px rgb(58, 59, 60);
+  border-bottom: solid 1px rgb(58, 59, 60);
+  width: 100%;
+}
+/* 2.8 formulär obligatoriskt */
+body form input:focus {
+  background-color: rgb(36, 37, 38);
+}
+
+body form p>* {
+  display: inline-block;
+  width: 100%;
+  margin-top: 1em;
+}
+
+body form p>* .blockLabel {
+  display: inline-block;
+  width: 100%;
+}
+
+/* 2.8 formulär */
+body form textarea {
+  display: block;
+  resize: none;
+  /* obligatoriskt */
+}
+
+body form p label {
+  text-align: center;
+}
+
+body form p .inlineLabel {
+  display: block;
+}
+
+/*-----------------------------------------------------------------2.9*/
+
+
+/*
+  2.9 övergångar (aside summary)
+*/
+
+body aside summary {
+  transition-duration: 500ms;
+}
+
+body aside:hover summary {
+  color: rgb(148, 149, 150);
+}
+
+/*
+  2.9 övergångar (navigationslänkar)
+*/
+body nav:hover a {
+  color: rgb(88, 89, 90);
+}
+
+body nav a {
+  transition-duration: 1000ms;
+}
+
+/*----------------------------------------------------------------- 2.10*/
+
+/* 2.10 Omvandlingar */
+aside details img:active {
+  transform: scale(0.9);
+}
+
+/*----------------------------------------------------------------- 2.x?*/
+body aside summary {
+  padding: 1rem;
+  display: block;
+}
+
+body aside details {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: rgb(88, 89, 90);
+
+}
+
+body fieldset {
+  border: 0;
+}
+
+/*----------------------------------------------------------------- 2.1 media queries (mostly layout)*/
+/* 2.1 Layout computer */
+@media screen and (min-width: 1024px) {
+  body {
+    width: min(100%, 1200px); /* stretch to screen width, but only while below 1200px */
+    overflow: auto; /* ? */
+  }
+
+  body p { 
+    -moz-columns: auto 2;
+         columns: auto 2;
+    width: auto;
+    -moz-column-gap: 4rem;
+         column-gap: 4rem;
+  }
+  body p img {
+    -moz-column-span: 1;
+         column-span: 1;
+    max-width: 100%;
+    max-height: 100%;
+    display: block; /* this makes image on its own line, but that is ok, because the "text wrap around" is achieved by having this in its own column of multicol paragraph */
+  }
+
+    /* 2.6 Bild */
+  body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
+    -moz-column-span: all;
+         column-span: all;
+    clear: both; 
+  }
+
+    /* 2.1 Layout */
+  body aside {
+    order: 2; 
+  }
+
+    /* 2.1 Layout */
+  body aside img {
+    display: block; 
+  }
+  body aside details img {
+    width: min(100%, 100px);
+  }
+    /* 2.1 on small screens, main will be lower down */
+  body main {
+    order: 1; 
+  }
+}
+
+/* 2.1 Layout tablet */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  body {
+    width: 100%; /* always fluid width */
+    flex-direction: column; /* ensures one column on small screens*/
+  }
+
+  body p { 
+    -moz-columns: auto 2; 
+         columns: auto 2; 
+  }
+
+    /* 2.6 Bild */
+  body p img {
+    -moz-column-span: 1;
+         column-span: 1;
+    max-width: 100%;
+    max-height: 100%;
+    display: block; /* this makes image on its own line, but that is ok, because the "text wrap around" is achieved by having this in its own column of multicol paragraph */
+  }
+  aside {
+    order: 1; /* on small screens, sidebar will be higher up */
+  }
+  aside details img {
+    width: min(25%, 100px);
+  }
+  main {
+    order: 2; /* on small screens, main will be lower down */
+  }
+}
+
+
+/* 2.1 Layout smartphone */
+@media screen and (max-width: 767px) {
+  body {
+    width: max(100%, 468px); /* the value 468 was chosen because that is the minimal width of my browser window!! allowing my site to reduce to this size, makes everything always fit well in my browser*/
+    flex-direction: column; /* ensures one column on small screens*/
+  }
+   
+  body p { 
+    -moz-columns: 250px 1;
+         columns: 250px 1; 
+  }
+  body p img {
+    -moz-column-span: 1;
+         column-span: 1;
+    width: min(100%, 255px); /* ensures the image is still viewable on very small screens */
+    max-width: 100%; /* don't want to enforce constant pixel widths or height max for images. Some images are larger and should take up the container space */
+    max-height: 100%;
+    float: right;
+  }
+  body article { 
+    -moz-columns: 250px 1;
+         columns: 250px 1; 
+  }
+
+  body aside {
+    order: 1; /* on small screens, sidebar will be higher up */
+  }
+  body aside details img {
+    width: min(25%, 100px);
+  }
+
+  body main {
+    order: 2; /* on small screens, main will be lower down */
+  }
+}
+
+/* 2.1 Printversion */
+@media print {
+  header,
+footer,
+aside,
+form,
+… {
+    display: none; 
+  }
+  body {
+    font-family: "Times New Roman", Times, serif;
+    box-shadow: none;
+    padding: 0;
+    border: none; 
+  }
+  body article,
+body section {
+    color: black;
+    box-shadow: none;
+    text-shadow: none;
+    border: none;
+    padding: 0;
+  }
+  body article table,
+body section table {
+    box-shadow: none;
+  }
+}

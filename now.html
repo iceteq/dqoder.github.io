@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>Now</title>
+  <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+  <header>
+    <nav class="menu">
+      <!-- Home, History, Now, Future -->
+      <a href="Home.html">Home</a>
+      <a href="History.html">History</a>
+      <a href="Now.html">Now</a>
+      <a href="Future.html">Future</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <!-- About me section -->
+      <h1>About me (now)</h1>
+      <article>
+        <!-- What's going on now? -->
+        <h2>What's going on now?</h2>
+        <p>
+          I'm currently studying Computer Science and Software Engineering.
+        </p>
+      </article>
+
+      <article>
+        <h2>Skills</h2>
+        <!-- What do I know? Skills? -->
+        <!-- table of skills with column for skill, star rating, comment, maybe use rowspan so you can speak of different aspects of a skill -->
+        <!-- png star rating with transparency -->
+        <table>
+          <caption>
+            Computer Related
+          </caption>
+          <thead>
+            <tr>
+              <th colspan="2"></th>
+              <th>Years Experience</th>
+              <th>Level</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td rowspan="2">Coding languages</td>
+              <td>Java</td>
+              <td>5-6</td>
+              <td>intermediate</td>
+            </tr>
+            <tr>
+              <!-- <td>category</td> -->
+              <td>Autohotkey</td>
+              <td>4-5</td>
+              <td>intermediate</td>
+            </tr>
+            <tr>
+              <td rowspan="2">Graphics</td>
+              <td>Photoshop</td>
+              <td>3</td>
+              <td>intermediate</td>
+            </tr>
+            <tr>
+              <!-- <td>category</td> -->
+              <td>Illustrator</td>
+              <td>3</td>
+              <td>intermediate</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table>
+          <caption>
+            Languages
+          </caption>
+          <thead>
+            <tr>
+              <th></th>
+              <th>English</th>
+              <th>Swedish</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Writing</td>
+              <td>5</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>Speaking</td>
+              <td>5</td>
+              <td>4</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>Overall</td>
+              <td>5</td>
+              <td>4.5</td>
+            </tr>
+          </tfoot>
+        </table>
+      </article>
+
+      <article>
+        <h2>Personal strengths</h2>
+        <!-- personal strengths? -->
+        <!-- description list with keywords as terms to be added in 1.6 -->
+        <dl>
+          <dt>Patience</dt>
+          <dd>
+            I have learned to appreciate the headache before a breakthrough
+          </dd>
+          <dt>Creativity</dt>
+          <dd>
+            Not exactly an artist, but I have the need to build and create.
+          </dd>
+        </dl>
+      </article>
+
+      <article>
+        <!-- Favorite quotes -->
+        <!-- block quotes -->
+        <h2>Favorite quotes</h2>
+        <blockquote
+          cite="https://www.goodreads.com/quotes/780983-champions-don-t-do-extraordinary-things-they-do-ordinary-things-but">
+          Champions don’t do extraordinary things. They do ordinary things,
+          but they do them without thinking, too fast for the other team to
+          react. They follow the habits they’ve learned
+        </blockquote>
+      </article>
+
+      <article>
+        <!-- Q&A related to the present -->
+        <h2>Q&A</h2>
+        <details>
+          <summary>
+            What other skills can supplement your coding skills?
+          </summary>
+          <p>
+            Skills in <mark>Photoshop</mark> and <mark>Illustrator</mark>.
+          </p>
+        </details>
+        <details>
+          <summary>Describe your current situation using pseudocode</summary>
+          <pre>
+            while(awake && caffeinated)
+              work()
+            </pre>
+        </details>
+      </article>
+
+      <article>
+        <h2>Hobbies</h2>
+        <h3>Calisthenics</h3>
+        <img src="../resources/interestshobbies.jpg" alt="picture of me doing calisthenics">
+        <!-- ... -->
+        <h3>Video editing</h3>
+        <video width="320" height="240" controls>
+          <source src="../resources/video.mp4" type="video/mp4">
+          failed to include video :(
+        </video>
+        <a href="video.html">LINK TO FULLSCREEN</a>
+      </article>
+    </section>
+  </main>
+
+  <aside>
+    <!-- info about the whole page, perhaps social media links -->
+    <details>
+      <summary>Social Media Links</summary>
+      <!-- image link to social media -->
+      <!-- unordered list 1.6 -->
+      <img src="../resources/face.png" alt="facebook link">
+      <img src="../resources/inst.png" alt="facebook link">
+      <img src="../resources/pint.png" alt="facebook link">
+      <img src="../resources/disc.png" alt="facebook link">
+
+    </details>
+  </aside>
+
+  <footer>
+    Copyright Anton Liampa
+
+    <!-- mailto in 1.5 -->
+    <a href="mailto:anton.liampa@outlook.com">e-mail me</a>
+  </footer>
+</body>
+</html>

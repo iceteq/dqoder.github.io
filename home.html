@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>HOME</title>
+  <meta name="application-name" content="someApplicationName">
+  <meta name="author" content="Anton Liampa">
+  <meta name="description" content="Antons website">
+  <meta name="generator" content="">
+  <meta name="keywords" content="Anton, Liampa, developer, coder">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+  <header>
+    <nav class="menu">
+      <!-- Home, History, Now, Future -->
+      <a href="Home.html">Home</a>
+      <a href="History.html">History</a>
+      <a href="Now.html">Now</a>
+      <a href="Future.html">Future</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <!-- About me section -->
+      <h1>Welcome!</h1>
+
+
+      <article class="columnArticle">
+        <!-- So who am I? / Welcome screen -->
+        <!-- jpeg -->
+        <!-- h1, h2 -->
+        <h2>Where have you ended up?</h2>
+
+        <!-- 2.6 till delen där jag behöver fixa float och clear -->
+
+
+
+        <p>
+          <img src="../resources/antonik.PNG">
+          This is a personal website.You will find info about my past, future and present.
+        </p>
+
+
+
+        <h2>Who am I?</h2>
+        <p>Just a CS student for now</p>
+
+        <h2>Where to go from here?</h2>
+        <p>You can find out more using the navigation area at the top. For example</p>
+        <!-- FLÖM INTE ATT LÄGGA TILL P TAGS I GAMLA FILER -->
+        <ul>
+          <li>my past</li>
+          <li>present</li>
+          <li>future</li>
+        </ul>
+      </article>
+      <article>
+        <h2>Hear me say something </h2>
+        <audio controls>
+          <source src="../resources/audio.mp3" type="audio/mpeg">
+          failed to include audio :(
+        </audio>
+      </article>
+      <article>
+        <h2>Write to me directly</h2>
+
+        <!-- how I layed out this form (fairly important):
+        every input is inside of label tag, it's a way of grouping/coupling these and reduces the needs for wrappers later,
+      for example when adding css, I may want do display certain elements on their own line, but others on the same line. By "hiding"
+    input in label, I can style the way all labels are positioned relative to each other, without impacting how the input looks relative to its label. This
+  is particularly useful since I am creating a multicolumn form, where I don't want the label to end up in one column and the input in the other, they must stick together -->
+        <form action="https://people.dsv.su.se/~pierre/i/05_ass/ip3/1/1.10/example.php" method="POST"
+          enctype="multipart/form-data">
+          <fieldset>
+            <legend>Contact form</legend>
+
+
+            <p>
+              <!-- 2.x alla paragrafer kommer att delas upp i två kolumner på större skärmar. Det funkar även bra att dela upp formulär så här! -->
+
+              <textarea id="txtarea" name="txtarea" rows="5" cols="25" maxlength="280"
+                placeholder="write a message here (max 280 characters)"></textarea>
+
+              <label for="name">Name
+                <input type="text" name="name" id="name" required>
+              </label>
+
+              <label for="email">Email
+                <input type="email" name="email" id="email" required>
+              </label>
+
+              <label for="url">URL
+                <input type="url" name="url" id="url">
+              </label>
+
+              <label for="file">File
+                <input id="file" type="file" name="file">
+              </label>
+
+              <label class="blockLabel" for="radio">Is this urgent?
+                <label class="blockLabel" for="yes">yes
+
+                  <input type="radio" name="radio" id="yes" value="off">
+                  <label for="no">no
+                    <input type="radio" name="radio" id="no" value="off">
+                  </label>
+                </label>
+              </label>
+
+              <label>
+                <label for="checkbox">I need a reply
+                  <input type="checkbox" name="checkbox" id="checkbox">
+                </label>
+                <button class="form-reset-button" type="reset">Reset</button>
+                <button class="form-submit-button" type="submit">Submit</button>
+                <!-- this has a class so I can style it in CSS -->
+              </label>
+
+
+
+
+            </p>
+          </fieldset>
+        </form>
+      </article>
+    </section>
+  </main>
+
+  <aside>
+    <!-- info about the whole page, perhaps social media links -->
+    <details>
+      <summary>Social Media Links</summary>
+      <!-- image link to social media -->
+      <!-- unordered list 1.6 -->
+      <img src="../resources/face.png" alt="facebook link">
+      <img src="../resources/inst.png" alt="facebook link">
+      <img src="../resources/pint.png" alt="facebook link">
+      <img src="../resources/disc.png" alt="facebook link">
+
+    </details>
+  </aside>
+
+  <footer>
+    Copyright Anton Liampa
+
+    <!-- mailto in 1.5 -->
+    <a href="mailto:anton.liampa@outlook.com">e-mail me</a>
+  </footer>
+</body>
+</html>
