@@ -1,0 +1,321 @@
+
+/* -------------------------------------------- tecken */
+@charset "UTF-8";
+@font-face {
+  font-family: "Century Gothic";
+  src: local("Century Gothic Regular"), local("Century-Gothic-Regular"), url("../resources/CenturyGothic/CenturyGothic.woff2") format("woff2"), url("../resources/CenturyGothic/CenturyGothic.woff") format("woff"), url("../resources/CenturyGothic/CenturyGothic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Century Gothic";
+  src: local("Century Gothic Bold"), local("Century-Gothic-Bold"), url("CenturyGothic-Bold.woff2") format("woff2"), url("CenturyGothic-Bold.woff") format("woff"), url("CenturyGothic-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+body {
+
+    font-family: "Century Gothic", CenturyGothic, sans-serif; /* har laddat ner fonts eftersom denna font inte är web safe. */
+}
+
+
+/* -------------------------------------------- generellt */
+body {
+    background-color: rgb(27, 27, 27);
+}
+       
+                                
+/* -------------------------------------------- buttons */
+#filters {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+
+
+}
+
+#filters button {
+    background-color: black;
+    color: white;
+}
+
+
+/* ------------ Transition effect ------------ */
+
+#filters button {
+    transition-duration: 1000ms;
+}
+  
+#filters button:hover {
+    color: lime;
+}
+
+
+/* -------------------------------------------- art panel */
+
+/*
+Maybe a bit of a confusing name. But I call the
+image and its corresponding information text an art panel.
+
+The combination display flex and flex-direction: column
+allows the contents of art-panel to stack vertically, as 
+if there is a column holding them together on the sides.
+*/
+
+.art-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background-color: #f2f2f2;
+
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
+}
+
+/* I will control the width in with css grid, when I specify 
+that the art panels should be put in equally sized columns */
+.art-panel {
+    min-height: 250px;
+    max-height: 300px;
+}
+
+.art-panel {
+    transition-duration: 1000ms;
+}
+
+/* Added "*" so that it impacts everything within art-panel*/
+.art-panel:hover * {
+    color: lime;
+}
+
+/*
+object fit contain allows the image to retain its dimensions. 
+*/
+.art-panel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    min-height: 250px;
+    max-height: 300px;
+  
+}
+
+/*
+Basic styling for title.
+*/
+.art-panel .title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+
+}
+
+/*
+This is the text that goes below the image
+*/
+.art-panel .description {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 10px;
+
+
+}
+
+.art-info {}
+
+
+.art-panel {
+    position: relative;
+    background-color: #000000;
+
+}
+
+
+/*
+This one might be worth commenting on. Notice
+the z-index being 1, and z-index of .art-panel img
+being 0.
+
+this is so that the info is always on top.
+
+and also, I wanted the info that belongs to an image
+to be displayed on top of it, 
+
+which is why I use absolute positioning here.
+
+*/
+.art-info {
+    position: absolute;
+    box-sizing: border-box;
+    z-index: 1;
+    bottom: 0px;
+    background-color: #000000;
+    color: white;
+    opacity: 80%;
+    width: 100%;
+    height:50%;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.art-panel img {
+    z-index: 0;
+}
+
+/* -------------------------------------------- grid */
+
+/*
+All art-panels are placed in
+<div class="grid-container">
+*/
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+
+    grid-gap: 10px;
+
+}
+
+/*
+For the smallest screens.. show images in ONE column.
+*/
+@media only screen and (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+}
+
+/*
+Smaller screens means two equally 
+sized columns ( = two images per row)
+*/
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+    }
+}
+
+
+/*
+On medium screens, grid should have three 
+equally sized columns (= 3 images per row).
+*/
+@media only screen and (min-width: 769px) and (max-width: 1200px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+    }
+
+    /*
+    THis is where we make it so the 
+    art-panel becomes larger on hover.
+    But in the js file, we adjust 
+    the transform origin so that it scales
+    in the right direction.
+    */
+
+    .art-panel {
+        transition: transform 0.3s;
+        transform: scale(1);
+    }
+
+    .art-panel:hover {
+        transform: scale(1.2);
+        z-index: 100;
+    }
+
+}
+
+/*
+Make art-pnale larger on hover. And also 
+keep the hovered element above all others
+using z-index
+*/
+@media only screen and (min-width: 1201px) {
+    .art-panel {
+        transition: transform 0.3s;
+        transform: scale(1);
+    }
+
+    .art-panel:hover {
+        transform: scale(1.2); 
+        z-index: 100;
+    }
+
+
+}
+
+
+.description {
+    opacity: 100%;
+
+}
+
+/* -------------------------------------------- images */
+
+/*
+Just trying to make it clear that 
+you can click on the image (to
+open it in new tab).
+*/
+
+.art-panel img {
+    cursor: pointer;
+}
+
+/* -------------------------------------------- for js */
+
+/*
+These were supposed to be the default 
+transform origins. But I set these dynamically now
+in the js file, for example:
+
+$(".art-panel:nth-child(7):visible").css("transform-origin", "bottom left");
+
+As you can see above. The 7-th art panel 
+gets its tranform-origin set to bottom left
+which means when it scales up, 
+it scaled upwards and to the right. 
+
+Which makes sense if the image is 
+on the bottom left corner.
+
+
+*/
+
+.js-top-left {
+    transform-origin: top left;
+}
+
+.js-top-center {
+    transform-origin: top center;
+}
+
+.js-top-right {
+    transform-origin: top right;
+}
+
+.js-bottom-left {
+    transform-origin: bottom left;
+}
+
+.js-bottom-center {
+    transform-origin: bottom center;
+}
+
+.js-bottom-right {
+    transform-origin: bottom right;
+}
+
+
+/* -------------------------------------------- for tags */
+.hidden-text {
+    display: none;
+}
