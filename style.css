@@ -48,7 +48,7 @@ body {
 }
   
 #filters button:hover {
-    color: lime;
+    color: rgb(91, 172, 91)
 }
 
 
@@ -88,14 +88,8 @@ that the art panels should be put in equally sized columns */
     
 }
 
-.art-panel {
-    transition-duration: 1000ms;
-}
 
-/* Added "*" so that it impacts everything within art-panel*/
-.art-panel:hover * {
-    color: lime;
-}
+
 
 /*
 object fit contain allows the image to retain its dimensions. 
@@ -134,7 +128,6 @@ This is the text that goes below the image
 
 }
 
-.art-info {}
 
 
 .art-panel {
@@ -162,9 +155,9 @@ which is why I use absolute positioning here.
     box-sizing: border-box;
     z-index: 1;
     bottom: 0px;
-    background-color: #e0e0e0;
+    background-color: #D1B464;
     color: rgb(14, 14, 14);
-    opacity: 80%;
+    opacity: 100%;
     width: calc(100% - 20px);
     
   
@@ -178,10 +171,14 @@ which is why I use absolute positioning here.
 .art-info .description {
 
     display:none;
+
+
 }
+
 
 .art-panel:hover .art-info .description{
     display:block;
+
 }
 
 

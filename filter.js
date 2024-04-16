@@ -41,7 +41,7 @@ portraitFilterBtn.addEventListener("click", function () {
       strings.push("Javascript");
       portRaitFiltered = true; // Update state variable
       portraitFilterBtn.style.backgroundColor = "lime";
-      alert(strings);
+      //alert(strings);
   }
 
     
@@ -74,7 +74,7 @@ wallpaperFilterBtn.addEventListener("click", function () {
       wallpaperFilterBtn.style.backgroundColor = "lime";
   }
 
-  alert(strings);
+  //alert(strings);
     hideAll();
     showOnly(strings);
   
@@ -149,7 +149,7 @@ function showAll(){
 
   highlightAll();
 
-  alert(strings);
+  //alert(strings);
 
 };
 
