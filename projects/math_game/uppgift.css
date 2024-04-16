@@ -1,0 +1,94 @@
+
+
+
+body {
+  text-align: center;
+  display: flex;
+  font-size: 3em;
+  justify-content: center;
+}
+
+.dark {
+  background-color: black; 
+  color: white;
+}
+
+body #problem,
+body .timePassed,
+body .timePassed2 {
+  display: block;
+  text-align: center;
+}
+
+body .timePassed2 {
+  display: none;
+}
+
+body #term1,
+body #term2,
+body .operator {
+  display: inline-block;
+}
+
+#progress {
+  width: 100%;
+  height: 0.2em;
+  border: 0;
+}
+
+progress[value]::-webkit-progress-value {
+  background-image: linear-gradient(to right, #3498db, #9b59b6);
+}
+
+progress::-webkit-progress-bar {
+  background-color: #ddd;
+}
+
+progress::-moz-progress-bar {
+  background: linear-gradient(to right, #3498db, #9b59b6);
+}
+
+body .userAnswer {
+  font-size: 1em;
+  width: 100%;
+  text-align: center;
+  transition: all 0.5s;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 0;
+  margin: 0;
+}
+body .userAnswer:focus {
+  outline: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border: none;
+}
+
+#new-round-button {
+  position: relative;
+  width: 20em;
+  padding: 1em;
+  box-sizing: border-box;
+  border-width: 0;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.info-box {
+  box-sizing: border-box;
+  display: none;
+  position: absolute;
+  width: 20em;
+  left: 0;
+  bottom: 100%;
+  /* padding:0.5em; */
+  text-align: center;
+  background-color: #eeee00;
+}
+
+#background {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: -1;
+}
+

@@ -1,0 +1,70 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Some title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="application-name" content="someApplicationName">
+    <meta name="author" content="Anton Liampa">
+    <meta name="description" content="Assignment">
+    <meta name="keywords" content="Anton, Liampa">
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="uppgift.css">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body>
+
+    <div id="background"></div>
+    <div id="foreground">
+        <div>
+
+
+            <div id="problemWrapper">
+                <div id="problem">
+                    <div id="term1">X</div>
+                    <div class="operator">+</div>
+                    <div id="term2">X</div>
+                </div>
+            </div>
+
+
+            <progress id="progress" value="0"></progress>
+
+
+            <input type="text" class="userAnswer" name="userAnswer" id="userAnswer" autofocus
+                onblur="reselect();" autocomplete="off">
+
+
+
+            <button id="new-round-button">Go!
+                <span class='info-box'>
+                    let's do this
+                </span>
+            </button>
+
+
+            <div class="timePassed"></div>
+            <div class="timePassed2"></div>
+
+            <ul class="previousResultList">
+
+            </ul>
+
+        </div>
+
+        <div>
+
+
+        </div>
+
+        <script src="uppgift.js"></script>
+
+    </div>
+
+</body>
+</html>
+

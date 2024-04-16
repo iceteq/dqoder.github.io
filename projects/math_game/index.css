@@ -1,0 +1,21 @@
+#grid-container{
+    display:grid;
+    place-items:center;
+    height: 100vh;
+    border: 1px solid black;
+}
+
+
+#startGameBtn {
+
+    height:100px;
+    width:200px;
+    
+}
+
+
+.info {
+
+    text-align: center;
+    font-size: 18pt;
+}
