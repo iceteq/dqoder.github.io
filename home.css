@@ -45,14 +45,7 @@ body nav a {
 }
 
 
-body nav img {
-  display: inline-block;
-  /* så att nav-höjden anpassas till paddingen hos a - större klick-yta! */
-  padding: 1.5em;
 
-  width:150px;
-
-}
 
 
 /* 2.1 */
@@ -447,9 +440,6 @@ body aside summary {
   display: block;
 }
 
-
-
-
 body aside details {
   border-top-width: 1px;
   border-top-style: solid;
@@ -463,12 +453,16 @@ body fieldset {
   border: 0;
 }
 
+
+
+
 /*----------------------------------------------------------------- 2.1 media queries (mostly layout)*/
 /* 2.1 Layout computer */
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1200px) {
   body {
-    width: min(100%, 1200px); /* stretch to screen width, but only while below 1200px */
+    width: min(80%, 524px); /* stretch to screen width, but only while below 1200px */
     overflow: auto; /* ? */
+    border: 1px solid red;
   }
 
   body p { 
@@ -517,10 +511,11 @@ body h6 {
 }
 
 /* 2.1 Layout tablet */
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@media screen and (min-width: 768px) and (max-width: 1200px) {
   body {
     width: 100%; /* always fluid width */
     flex-direction: column; /* ensures one column on small screens*/
+    border: 2px solid cyan;
   }
 
   body p { 
@@ -536,13 +531,13 @@ body h6 {
     max-height: 100%;
     display: block; /* this makes image on its own line, but that is ok, because the "text wrap around" is achieved by having this in its own column of multicol paragraph */
   }
-  aside {
+  body aside {
     order: 1; /* on small screens, sidebar will be higher up */
   }
   aside details img {
     width: min(25%, 100px);
   }
-  main {
+  body main {
     order: 2; /* on small screens, main will be lower down */
   }
 }
@@ -652,15 +647,27 @@ main section .collapsable-article {
 }
 
 
-body nav {
-
-
-  display: flex;
- 
-  align-items: center; /* Vertically center-align items */
-
+body nav #wrapper{
+  display:flex;
+  align-items:center;
+  flex-wrap: wrap;
 }
+
+
+
 
 body {
   width:100%;
+}
+
+
+body nav img {
+  display: inline-block;
+  /* så att nav-höjden anpassas till paddingen hos a - större klick-yta! */
+  padding: 1.5em;
+
+  
+
+  width:150px;
+
 }

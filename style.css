@@ -68,17 +68,24 @@ if there is a column holding them together on the sides.
     flex-direction: column;
     align-items: center;
     padding: 10px;
-    background-color: #f2f2f2;
+    background: 
+                radial-gradient(ellipse farthest-corner at center top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
 
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 
 }
 
+
+
 /* I will control the width in with css grid, when I specify 
 that the art panels should be put in equally sized columns */
 .art-panel {
-    min-height: 250px;
-    max-height: 300px;
+
+
+    width: 100%;
+    height: 100%;
+
+    
 }
 
 .art-panel {
@@ -95,10 +102,13 @@ object fit contain allows the image to retain its dimensions.
 */
 .art-panel img {
     width: 100%;
-    height: 100%;
+
     object-fit: cover; 
-    min-height: 250px;
+    min-height: 300px;
     max-height: 300px;
+
+    min-width: 300px;
+   
   
 }
 
@@ -106,7 +116,7 @@ object fit contain allows the image to retain its dimensions.
 Basic styling for title.
 */
 .art-panel .title {
-    font-size: 24px;
+    font-size: 18px;
     font-weight: bold;
     text-align: center;
     margin-top: 10px;
@@ -118,8 +128,8 @@ This is the text that goes below the image
 */
 .art-panel .description {
     text-align: center;
-    font-size: 18px;
-    margin-top: 10px;
+    font-size: 16px;
+    margin-top: 0px;
 
 
 }
@@ -129,7 +139,7 @@ This is the text that goes below the image
 
 .art-panel {
     position: relative;
-    background-color: #000000;
+
 
 }
 
@@ -152,15 +162,28 @@ which is why I use absolute positioning here.
     box-sizing: border-box;
     z-index: 1;
     bottom: 0px;
-    background-color: #000000;
-    color: white;
+    background-color: #e0e0e0;
+    color: rgb(14, 14, 14);
     opacity: 80%;
-    width: 100%;
-    height:50%;
+    width: calc(100% - 20px);
+    
+  
     padding-bottom: 10px;
     padding-right: 10px;
     padding-left: 10px;
+    margin:10px;
+    
 }
+
+.art-info .description {
+
+    display:none;
+}
+
+.art-panel:hover .art-info .description{
+    display:block;
+}
+
 
 .art-panel img {
     z-index: 0;
@@ -174,7 +197,7 @@ All art-panels are placed in
 */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
 
     grid-gap: 10px;
@@ -186,8 +209,8 @@ For the smallest screens.. show images in ONE column.
 */
 @media only screen and (max-width: 600px) {
     .grid-container {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(auto, 1fr);
     }
 }
 
@@ -209,48 +232,13 @@ equally sized columns (= 3 images per row).
 */
 @media only screen and (min-width: 769px) and (max-width: 1200px) {
     .grid-container {
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: auto;
-    }
-
-    /*
-    THis is where we make it so the 
-    art-panel becomes larger on hover.
-    But in the js file, we adjust 
-    the transform origin so that it scales
-    in the right direction.
-    */
-
-    .art-panel {
-        transition: transform 0.3s;
-        transform: scale(1);
-    }
-
-    .art-panel:hover {
-        transform: scale(1.2);
-        z-index: 100;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(auto, 1fr);
     }
 
 }
 
-/*
-Make art-pnale larger on hover. And also 
-keep the hovered element above all others
-using z-index
-*/
-@media only screen and (min-width: 1201px) {
-    .art-panel {
-        transition: transform 0.3s;
-        transform: scale(1);
-    }
 
-    .art-panel:hover {
-        transform: scale(1.2); 
-        z-index: 100;
-    }
-
-
-}
 
 
 .description {
