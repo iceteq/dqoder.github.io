@@ -315,7 +315,7 @@ function removeTransitions() {
  * 
  * <img src="https://tinyurl.com/mrxd7ed6" alt="Painting 8">
  */
-
+/**
 function makeImageOpenableInANewTab(){
   document.querySelectorAll('.art-panel img').forEach(x => {
     x.addEventListener('click', () => {
@@ -323,12 +323,15 @@ function makeImageOpenableInANewTab(){
     });
   });
 }
-
+*/
  
 /**
  * I want to add the click event once everything is loaded..
  * makes no sense to do it beforehand.
  */
+/**
  window.onload = function(){
   makeImageOpenableInANewTab();
 }
+
+*/
