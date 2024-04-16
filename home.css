@@ -462,7 +462,7 @@ body fieldset {
   body {
     width: min(80%, 524px); /* stretch to screen width, but only while below 1200px */
     overflow: auto; /* ? */
-    border: 1px solid red;
+   
   }
 
   body p { 
@@ -515,7 +515,7 @@ body h6 {
   body {
     width: 100%; /* always fluid width */
     flex-direction: column; /* ensures one column on small screens*/
-    border: 2px solid cyan;
+
   }
 
   body p { 
