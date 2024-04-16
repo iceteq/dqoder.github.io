@@ -28,7 +28,7 @@ portraitFilterBtn.addEventListener("click", function () {
 
     // If the filter is active (wallpaper is present in the array), remove it
     strings = strings.filter(function(string) {
-        return string !== "portrait";
+        return string !== "Javascript";
     });
     portRaitFiltered = false; // Update state variable
     portraitFilterBtn.style.backgroundColor = "black";
@@ -38,7 +38,7 @@ portraitFilterBtn.addEventListener("click", function () {
 
     strings = [];
       // If the filter is not active (wallpaper is not present in the array), add it
-      strings.push("portrait");
+      strings.push("Javascript");
       portRaitFiltered = true; // Update state variable
       portraitFilterBtn.style.backgroundColor = "lime";
       alert(strings);
@@ -60,7 +60,7 @@ wallpaperFilterBtn.addEventListener("click", function () {
       
 
       strings = strings.filter(function(string) {
-          return string !== "wallpaper";
+          return string !== "PHP";
       });
       wallpaperFiltered = false; // Update state variable
       wallpaperFilterBtn.style.backgroundColor = "black";
@@ -69,7 +69,7 @@ wallpaperFilterBtn.addEventListener("click", function () {
     strings = [];
     highlightNone();
       // If the filter is not active (wallpaper is not present in the array), add it
-      strings.push("wallpaper");
+      strings.push("PHP");
       wallpaperFiltered = true; // Update state variable
       wallpaperFilterBtn.style.backgroundColor = "lime";
   }
