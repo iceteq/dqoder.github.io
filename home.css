@@ -282,24 +282,32 @@ aside img:hover {
   background: rgba(255, 255, 255, 0.5);
 }
 
-body nav a:hover:nth-child(1) {
+body nav a:hover:nth-child(2) {
   color: orangered;
 }
 
-body nav a:hover:nth-child(2) {
+body nav a:hover:nth-child(3) {
   color: lime;
 }
 
-body nav a:hover:nth-child(3) {
+body nav a:hover:nth-child(4) {
   color: orange;
 }
 
-body nav a:hover:nth-child(4) {
+body nav a:hover:nth-child(5) {
   color: cyan;
 }
 
+body nav a:hover:nth-child(6) {
+  color: rgb(238, 54, 63);
+}
+
+body nav a:hover:nth-child(7) {
+  color: rgb(94, 54, 238);
+}
+
 /* 2.3 links */
-body nav a:active:nth-child(1) {
+body nav a:active:nth-child(2) {
   color: white;
   
 }
@@ -670,4 +678,9 @@ body nav img {
 
   width:150px;
 
+  filter: grayscale(100%);
+
 }
+
+
+
