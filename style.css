@@ -160,6 +160,8 @@ which is why I use absolute positioning here.
     padding-right: 10px;
     padding-left: 10px;
     margin:10px;
+
+    box-shadow:none;
     
 }
 
