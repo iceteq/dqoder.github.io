@@ -40,7 +40,7 @@ body nav a {
   display: inline-block;
   /* så att nav-höjden anpassas till paddingen hos a - större klick-yta! */
   padding: 1.5em;
-  color: black;
+  color: rgb(100, 100, 100);
 
 }
 

@@ -1,7 +1,123 @@
-var artPanels = document.querySelectorAll(".art-panel");
-var filterButtons = document.querySelectorAll(".filter-button");
+// -var artPanels = document.querySelectorAll(".art-panel");
+// -var filterButtons = document.querySelectorAll(".filter-button");
 
-highlightAll();
+var searchField;
+var filterButtons;
+var artPanels;
+
+$(document).ready(function() {
+
+
+  searchField = document.getElementById('search-field');
+  filterButtons = document.querySelectorAll('.filter-button');
+  artPanels = document.querySelectorAll('.art-panel');
+
+
+  /**
+   * WHY USE A SEPARATE FUNCTION IN THESE EVENT LISTENERS
+   * 
+   * By adding event listeners that trigger a function, you can have multiple
+   * buttons/search input fields that trigger the same function. 
+   * 
+   * This is better than
+   * the search input having its own even listener functionality
+   * and then the boxes having their own. 
+   * 
+   * Why?
+   * 
+   * We have to think of how search and filter works in simple terms.
+   * First off, we need to show only elements that contain a search query
+   * and then among the stuff that is visible so far, we will have to
+   * further hide things that don't contain a digit.
+   * 
+   * BUT
+   * 
+   * when should we do it? If we have an "ok" search button
+   * we can just add a click listener to that button, and
+   * do the things I described.
+   * 
+   * BUT.. we want to search/filter in "real-time", so 
+   * both search and filter should be applied as soon as you click
+   * a check box, or when you write any character into the search bar.
+   * 
+   * Initially I thought.. "let's just create a separate click lisener for the check boxes, and one for search".
+   * 
+   * I actually did that in another assignment. And it ended with me having duplicate code 
+   * in two different event listeners.
+   * 
+   * It made the logic more complicated too.
+   * 
+   * So for the future, here is a rule of thumb. If you have
+   * multiple controls, doing something together, then consider
+   * making all controls point to the same function.
+   * 
+   */
+  filterButtons.forEach(checkBox => checkBox.addEventListener('change', applyFilterAndSearch));
+  searchField.addEventListener('input', applyFilterAndSearch);
+});
+
+
+function applyFilterAndSearch() {
+
+ 
+  var query = searchField.value;
+
+  var checkBoxValues = getCheckBoxValues();
+
+  artPanels.forEach(item => {
+    var artPanelText = item.textContent;
+
+    var searchWordMatch = artPanelText.includes(query);
+
+    var noFiltersSelected = checkBoxValues.length === 0;
+  
+
+    var filterMatch = noFiltersSelected || containsAnyCheckboxValue(artPanelText, checkBoxValues);
+
+    if (searchWordMatch && filterMatch) {
+
+        item.style.display = "grid";
+
+    } else {
+        item.style.display = "none";
+
+    }
+});
+}
+
+
+
+function getCheckBoxValues() {
+  var checkBoxValues = [];
+
+  for (var i = 0; i < filterButtons.length; i++) {
+      var checkbox = filterButtons[i];
+      
+      if (checkbox.checked) {
+        checkBoxValues.push(checkbox.value);
+      }
+  }
+
+  return checkBoxValues;
+}
+
+
+
+function containsAnyCheckboxValue(artPanelText, checkBoxValues) {
+  for (var i = 0; i < checkBoxValues.length; i++) {
+      var checkboxValue = checkBoxValues[i];
+
+      if (artPanelText.includes(checkboxValue)) {
+          return true;
+      }
+  }
+  
+  return false;
+}
+
+
+
+//-  highlightAll();
 
 
 // ---------------------------------------------------------------- FILTER
@@ -34,7 +150,7 @@ portraitFilterBtn.addEventListener("click", function () {
     portraitFilterBtn.style.backgroundColor = "black";
   } else {
 
-    highlightNone();
+    //-  highlightNone();
 
     strings = [];
       // If the filter is not active (wallpaper is not present in the array), add it
@@ -67,7 +183,7 @@ wallpaperFilterBtn.addEventListener("click", function () {
   } else {
 
     strings = [];
-    highlightNone();
+    //- //-  highlightNone();
       // If the filter is not active (wallpaper is not present in the array), add it
       strings.push("PHP");
       wallpaperFiltered = true; // Update state variable
@@ -147,7 +263,7 @@ function showAll(){
   });
 
 
-  highlightAll();
+  //- //-  highlightAll();
 
   //alert(strings);
 
