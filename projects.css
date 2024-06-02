@@ -325,6 +325,19 @@ equally sized columns (= 3 images per row).
 
 }
 
+
+.more-info {
+
+    text-decoration: none;
+    color: black;
+}
+
+.more-info:hover {
+
+    text-decoration: none;
+    color: white;
+}
+
 /* -------------------------------------------- images */
 
 /*
